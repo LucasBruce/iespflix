@@ -2,3 +2,12 @@
     background-image: url('../../../assets/app/views/home/img/background.jpg');
             height: 100vh
 }
+
+.iespflix{
+    padding-top: 10%;
+    padding-left: 1%;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color:red;
+}

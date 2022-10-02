@@ -1,1 +1,87 @@
-<p>cadastrar works!</p>
+<div class="container">
+    <form class="form-horizontal" [formGroup]="formGroup">
+            <div class="form-group">
+                
+                <mat-form-field class="form-element">
+                    <mat-label>Nome Completo</mat-label>
+                    <input matInput formControlName="nome" type="text">
+                    <mat-error>
+                        {{ hintNome }}
+                    </mat-error>
+                </mat-form-field>
+        
+                <mat-form-field class="form-element">
+                    <mat-label>Data de Nascimento</mat-label>
+                    <input matInput formControlName="dataNascimento" type="date">
+                    <mat-error>
+                       {{ hintDataNascimento }}
+                    </mat-error>
+                </mat-form-field>
+            
+                <mat-form-field class="form-element">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput formControlName="email" type="email">
+                    <mat-error>
+                       {{ hintEmail }}
+                    </mat-error>
+                </mat-form-field>
+            
+                <mat-form-field class="form-element">
+                    <mat-label>Senha</mat-label>
+                    <input matInput formControlName="senha" type="password">
+                    <mat-error>
+                        {{ hintSenha }}
+                    </mat-error>
+                </mat-form-field>
+            
+                <mat-form-field class="form-element">
+                    <mat-label>Confirmar Senha</mat-label>
+                    <input matInput formControlName="senhaConfirmar" type="password">
+                    <mat-error *ngIf="senhaConfirmar.invalid || confirmarSenha()">
+                        {{ hintSenhaConfirmar }}
+                    </mat-error>
+                </mat-form-field>
+            
+                <mat-form-field class="form-element">
+                    <mat-label>Número do Cartão</mat-label>
+                    <input matInput formControlName="numeroCartao" type="number">
+                    <mat-error>
+                        {{ hintNumeroCartao }}
+                    </mat-error>
+                </mat-form-field>
+            
+                <mat-form-field class="form-element">
+                    <mat-label>Validade do Cartão</mat-label>
+                    <input matInput formControlName="validadeCartao" type="date">
+                    <mat-error>
+                        {{ hintValidadeCartao }}
+                    </mat-error>
+                </mat-form-field>
+            
+                <mat-form-field class="form-element">
+                    <mat-label>Código de Segurança</mat-label>
+                    <input matInput formControlName="codigoCartao" type="number">
+                    <mat-error>
+                       {{ hintCodigoCartao }}
+                    </mat-error>
+                </mat-form-field>
+            
+                <mat-form-field class="form-element">
+                    <mat-label>Nome do Titular do Cartão</mat-label>
+                    <input matInput formControlName="titularCartao" type="text">
+                    <mat-error>
+                        {{ hintTitularCartao }}
+                    </mat-error>
+                </mat-form-field>
+            
+                <mat-form-field class="form-element">
+                    <mat-label>CPF/CNPJ</mat-label>
+                    <input matInput formControlName="cpfCnpj" type="number">
+                    <mat-error>
+                        {{ hintCpfCnpj }}
+                    </mat-error>
+                </mat-form-field>
+                <button class="btn btn-primary" (click)="campoValida()">Submit</button>
+        </div>
+    </form>
+</div>
