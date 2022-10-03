@@ -37,10 +37,13 @@
                 <mat-form-field class="form-element">
                     <mat-label>Confirmar Senha</mat-label>
                     <input matInput formControlName="senhaConfirmar" type="password">
-                    <mat-error *ngIf="senhaConfirmar.invalid || confirmarSenha()">
+                    <mat-error>
                         {{ hintSenhaConfirmar }}
                     </mat-error>
                 </mat-form-field>
+                <div *ngIf="validarSenha" class="mt-n1">
+                  <span id="alerta"> {{ hintSenhaConfirmar }}  </span>
+                </div>
             
                 <mat-form-field class="form-element">
                     <mat-label>Número do Cartão</mat-label>

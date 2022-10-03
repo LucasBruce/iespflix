@@ -12,6 +12,9 @@ import { registerLocaleData } from '@angular/common';
 import { MaterialModule } from 'src/module/material/material.module';
 import { HeaderComponent } from './components/template/header/header.component';
 import { CadastrarComponent } from './components/cadastrar/cadastrar.component';
+import { AlertModule } from '@coreui/angular';
+import { IconModule } from '@coreui/icons-angular';
+
 
 
 registerLocaleData(localePt);
@@ -30,7 +33,9 @@ registerLocaleData(localePt);
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    AlertModule,
+    IconModule
   ],
   providers: [{ 
     provide: LOCALE_ID,

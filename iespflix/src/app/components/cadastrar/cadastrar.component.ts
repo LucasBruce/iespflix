@@ -65,9 +65,9 @@ export class CadastrarComponent implements OnInit {
       this.senhaConfirmar.ValidationErrors
     }
 
-    if(this.formGroup.get('nome')?.errors != null){
+     if(this.formGroup.get('nome')?.errors != null){
       this.hintNome = "Nome Completo é obrigatório.";
-    }
+     }
      if(this.formGroup.get('email')?.errors != null){
       this.hintEmail = "E-mail é obrigatório e precisa ser válido."
      }
@@ -78,11 +78,11 @@ export class CadastrarComponent implements OnInit {
       this.hintSenha = "Senha é obrigatório.";
      }  
      if(this.formGroup.get('senhaConfirmar')?.errors != null){
-        if(this.senhaConfirmar != null || undefined || ""){
-          this.hintSenhaConfirmar = "Confirmar Senha é obrigatório.";
-        }else if(this.validarSenha){
-          this.hintSenhaConfirmar = "Senha incorreta.";
-        }
+      this.hintSenhaConfirmar = "Confirmar Senha é obrigatório.";
+       
+     }else if(this.validarSenha){
+      this.hintSenhaConfirmar = "Senha incorreta.";
+     
      }
      if(this.formGroup.get('numeroCartao')?.errors != null){
       this.hintNumeroCartao = "Número do Cartão é obrigatório.";
