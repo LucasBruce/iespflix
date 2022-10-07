@@ -14,6 +14,9 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { CadastrarComponent } from './components/cadastrar/cadastrar.component';
 import { AlertModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
+import { LoginComponent } from './components/login/login.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -26,6 +29,8 @@ registerLocaleData(localePt);
     NavComponent,
     HeaderComponent,
     CadastrarComponent,
+    LoginComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ registerLocaleData(localePt);
     ReactiveFormsModule,
     MaterialModule,
     AlertModule,
-    IconModule
+    IconModule,
+    HttpClientModule
   ],
   providers: [{ 
     provide: LOCALE_ID,

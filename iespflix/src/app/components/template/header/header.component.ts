@@ -17,4 +17,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/cadastrar']);
   }
 
+  login(): void{
+    this.router.navigate(['/login']);
+  }
+
 }

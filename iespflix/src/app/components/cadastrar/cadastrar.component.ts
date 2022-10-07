@@ -82,7 +82,6 @@ export class CadastrarComponent implements OnInit {
        
      }else if(this.validarSenha){
       this.hintSenhaConfirmar = "Senha incorreta.";
-     
      }
      if(this.formGroup.get('numeroCartao')?.errors != null){
       this.hintNumeroCartao = "Número do Cartão é obrigatório.";
