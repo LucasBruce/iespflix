@@ -17,6 +17,7 @@ import { IconModule } from '@coreui/icons-angular';
 import { LoginComponent } from './components/login/login.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthenticationComponent } from './views/authentication/authentication.component';
 
 
 
@@ -31,6 +32,7 @@ registerLocaleData(localePt);
     CadastrarComponent,
     LoginComponent,
     InicioComponent,
+    AuthenticationComponent,
   ],
   imports: [
     BrowserModule,

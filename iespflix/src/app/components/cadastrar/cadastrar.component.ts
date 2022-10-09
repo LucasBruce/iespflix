@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/internal/Observable';
+import { Usuario } from 'src/app/model/usuario';
+import { CadastrarService } from 'src/app/service/cadastrar.service';
+import * as CryptoJS from 'crypto-js';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cadastrar',
@@ -35,7 +39,23 @@ export class CadastrarComponent implements OnInit {
   senha: any;
   senhaConfirmar: any;
 
-  constructor(private formBuilder: FormBuilder) {}
+  usuario!: Usuario;
+
+  constructor(private formBuilder: FormBuilder, private cadastroService: CadastrarService) {}
+
+  nome!: string;
+  email!: string;
+  dataNascimento!: string;
+  senhaForm!: string;
+  senhaConfirmarForm!: string;
+  numeroCartao!: number;
+  validadeCartao!: number;
+  codigoCartao!: number;
+  titularCartao!: string;
+  cpfCnpj!: string;
+
+  tokenFromUI: string = "0123456789123456";
+  encrypted: any = "";
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
@@ -69,7 +89,7 @@ export class CadastrarComponent implements OnInit {
       this.hintNome = "Nome Completo é obrigatório.";
      }
      if(this.formGroup.get('email')?.errors != null){
-      this.hintEmail = "E-mail é obrigatório e precisa ser válido."
+      this.hintEmail = "E-mail é obrigatório e precisa ser válido.";
      }
      if(this.formGroup.get('dataNascimento')?.errors != null){
       this.hintDataNascimento = "Data de Nascimento é obrigatório.";
@@ -98,8 +118,48 @@ export class CadastrarComponent implements OnInit {
      if(this.formGroup.get('cpfCnpj')?.errors != null){
       this.hintCpfCnpj = "CPF/CNPJ é obrigatório."
       }  
+      this.setUsuario();
+      console.log(this.getUsuario());
+      let conso = this.cadastroService.Cadastro(this.getUsuario());
+      
+    }
+    setUsuario(): void{
+       this.nome = this.formGroup.get('nome')?.value;
+       this.email = this.formGroup.get('email')?.value;
+       this.dataNascimento = this.formGroup.get('dataNascimento')?.value;
+       this.senhaForm = this.formGroup.get('senha')?.value;
+       this.senhaConfirmarForm = this.formGroup.get('senhaConfirmar')?.value;
+       this.numeroCartao = this.formGroup.get('numeroCartao')?.value;
+       this.validadeCartao = this.formGroup.get('validadeCartao')?.value;
+       this.codigoCartao = this.formGroup.get('codigoCartao')?.value;
+       this.titularCartao = this.formGroup.get('titularCartao')?.value;
+       this.cpfCnpj = this.formGroup.get('cpfCnpj')?.value;
     }
 
+    getUsuario(): Usuario{
+      return this.usuario = {
+           nome: this.nome,
+           email: this.email,
+           dataNascimento: this.dataNascimento,
+           senha: this.encryptUsingAES256(this.senha),
+           senhaConfirmar: this.encryptUsingAES256(this.senhaConfirmar),
+           numeroCartao: this.numeroCartao,
+           validadeCartao: this.validadeCartao,
+           codigoCartao: this.codigoCartao,
+           titularCartao: this.titularCartao,
+           cpfCnpj: this.cpfCnpj};
+    }
+
+    encryptUsingAES256(senha: any): string {
+      let encrypted = CryptoJS.AES.encrypt(
+        JSON.stringify(senha), environment._key, {
+          keySize: 16,
+          iv: environment._iv,
+          mode: CryptoJS.mode.ECB,
+          padding: CryptoJS.pad.Pkcs7
+        });
+      return this.encrypted = encrypted.toString();
+    }
 }
 
 

@@ -1,0 +1,56 @@
+{
+  "usuarios": [
+    {
+      "nome": "LUCAS MATHEUS",
+      "email": "lucas@gmail.com",
+      "dataNascimento": "2022-10-03",
+      "senha": "mb4LEwfFY3eEYXra1XBhqg==",
+      "senhaConfirmar": "mb4LEwfFY3eEYXra1XBhqg==",
+      "numeroCartao": 123,
+      "validadeCartao": "2022-10-10",
+      "codigoCartao": 123,
+      "titularCartao": "lucas",
+      "cpfCnpj": 34234234,
+      "id": 4
+    },
+    {
+      "nome": "LUCAS MATHEUS",
+      "email": "lucas@gmail.com",
+      "dataNascimento": "2022-10-03",
+      "senha": "mb4LEwfFY3eEYXra1XBhqg==",
+      "senhaConfirmar": "mb4LEwfFY3eEYXra1XBhqg==",
+      "numeroCartao": 123,
+      "validadeCartao": "2022-10-10",
+      "codigoCartao": 123,
+      "titularCartao": "lucas",
+      "cpfCnpj": 34234234,
+      "id": 5
+    },
+    {
+      "nome": "LUCAS MATHEUS",
+      "email": "admin@gmail.com",
+      "dataNascimento": "2022-10-11",
+      "senha": "mb4LEwfFY3eEYXra1XBhqg==",
+      "senhaConfirmar": "mb4LEwfFY3eEYXra1XBhqg==",
+      "numeroCartao": 123,
+      "validadeCartao": "2022-10-11",
+      "codigoCartao": 123,
+      "titularCartao": "lucas",
+      "cpfCnpj": 12341234,
+      "id": 6
+    },
+    {
+      "nome": "LUCAS MATHEUS",
+      "email": "admin@gmail.com",
+      "dataNascimento": "2022-10-03",
+      "senha": "ecoSUoLLT0p+Dl64sc3FeQ==",
+      "senhaConfirmar": "ecoSUoLLT0p+Dl64sc3FeQ==",
+      "numeroCartao": 123123,
+      "validadeCartao": "2022-10-05",
+      "codigoCartao": 12312312,
+      "titularCartao": "lucas",
+      "cpfCnpj": 2313123,
+      "id": 7
+    }
+  ]
+}
