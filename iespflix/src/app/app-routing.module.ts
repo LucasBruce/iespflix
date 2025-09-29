@@ -7,7 +7,7 @@ import { AuthGuard } from './components/shared/auth.guard';
 import { AuthenticationComponent } from './views/authentication/authentication.component';
 import { HomeComponent } from './views/home/home.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: "cadastrar",
     component: CadastrarComponent

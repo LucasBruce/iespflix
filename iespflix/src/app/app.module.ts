@@ -19,8 +19,6 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationComponent } from './views/authentication/authentication.component';
 
-
-
 registerLocaleData(localePt);
 
 @NgModule({
